@@ -6,6 +6,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove=".gitignore" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Nerdbank.Streams" Version="2.9.112" />
 		<PackageReference Include="StreamJsonRpc" Version="2.14.24" />
 	</ItemGroup>

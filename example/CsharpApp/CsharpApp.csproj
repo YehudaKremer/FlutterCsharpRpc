@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+
+		<!-- Using target-framework: 'net7.0-windows' and 'UseWPF' only for the 'MessageBox.Show' example,
+			for cross-platform code use target-framework: 'net7.0' and remove 'UseWPF' -->
+		<TargetFramework>net7.0-windows</TargetFramework>
+		<UseWPF>true</UseWPF>
+
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\csharp\FlutterCsharpRpc.csproj" />
+	</ItemGroup>
+
+</Project>
