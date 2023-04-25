@@ -8,9 +8,9 @@ late CsharpRpc csharpRpc;
 Future<void> main() async {
   runApp(const MyApp());
 
-  csharpRpc = await CsharpRpc(
-          "C:\\workspaces\\LetsTalk\\LetsTalk\\bin\\Debug\\net7.0-windows\\LetsTalk1.exe")
-      .start();
+  csharpRpc =
+      await CsharpRpc("../CsharpApp/bin/Debug/net7.0-windows/CsharpApp.exe")
+          .start();
 }
 
 class MyApp extends StatelessWidget {
@@ -48,7 +48,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
     var filesResult = FilesInFolderResponse.fromJson(await csharpRpc.invoke(
         method: "getFilesInFolder",
-        param: GetFilesInFolderRequest(folderPath: 'D:\\Logs')));
+        param: GetFilesInFolderRequest(
+            folderPath: '../CsharpApp/bin/Debug/net7.0-windows/')));
     print('filesResult:');
     print(filesResult.files);
 
