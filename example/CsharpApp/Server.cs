@@ -8,11 +8,16 @@ public class Server
 {
     public DateTime GetCurrentDateTime()
     {
+        // Log to STDERR so we wont corrupt the STDOUT pipe that we using for JSON-RPC.
+        Console.Error.WriteLine($"Received 'GetCurrentDateTime' request");
+
         return DateTime.Now;
     }
 
     public int SumNumbers(int a, int b)
     {
+        Console.Error.WriteLine($"Received 'SumNumbers' request");
+
         return a + b;
     }
 
@@ -22,13 +27,14 @@ public class Server
     /// </summary>
     public void ShowMessageBox(string title, string message)
     {
+        Console.Error.WriteLine($"Received 'ShowMessageBox' request");
+
         MessageBox.Show(message, title, MessageBoxButton.OK, MessageBoxImage.Asterisk, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
     }
 
     public FilesInFolderResponse GetFilesInFolder(GetFilesInFolderRequest request)
     {
-        // Log to STDERR so we wont corrupt the STDOUT pipe that we using for JSON-RPC.
-        Console.Error.WriteLine($"Received GetFilesInFolder request");
+        Console.Error.WriteLine($"Received 'GetFilesInFolder' request");
 
         return new FilesInFolderResponse
         {
