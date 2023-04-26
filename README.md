@@ -102,6 +102,10 @@ public class Server
 
 See the full [demo](https://github.com/YehudaKremer/FlutterCsharpRpc/tree/main/example) of Flutter and C# app that communicate between them.
 
+## 🙏 Credit
+
+This package based on Michael K Snead's article on medium: [Flutter, C# and JSON RPC](https://medium.com/@aikeru/flutter-c-and-json-rpc-f325be6764bd)
+
 ---
 
 Tags: `Csharp` `C#` `RPC` `flutter csharp` `flutter c#` `csharp ffi` `csharp json-rpc` `FlutterCsharpRpc` `StreamJsonRpc`
