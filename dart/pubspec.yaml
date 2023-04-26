@@ -6,7 +6,7 @@ homepage: https://github.com/YehudaKremer/FlutterCsharpRpc
 issue_tracker: https://github.com/YehudaKremer/FlutterCsharpRpc/issues
 screenshots:
   - description: "Execute C# code from Dart (Flutter) application."
-    path: docs/assets/csharp_rpc_logo_small.png
+    path: doc/assets/csharp_rpc_logo_small.png
 
 environment:
   sdk: ">=2.12.0 <4.0.0"
