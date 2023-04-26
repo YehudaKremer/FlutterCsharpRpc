@@ -81,14 +81,15 @@ class MyHomePage extends StatelessWidget {
                     /// invoke C# method 'GetFilesInFolder' with param of
                     /// 'GetFilesInFolderRequest' instance to get a list of
                     /// files in the current folder
-                    var filesResult =
-                        FilesInFolderResponse.fromJson(await csharpRpc.invoke(
+                    var filesResult = await csharpRpc.invoke(
                       method: "GetFilesInFolder",
                       param: GetFilesInFolderRequest(
                           folderPath: Directory.current.path),
-                    ));
+                    );
+                    var filesInFolder =
+                        FilesInFolderResponse.fromJson(filesResult);
 
-                    _updateTextField(filesResult.files.toString());
+                    _updateTextField(filesInFolder.files.toString());
                   },
                 ),
               ],
