@@ -5,7 +5,9 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlutterCsharpRpc", "csharp\FlutterCsharpRpc.csproj", "{1D236320-4D02-4FBE-878D-2A485124D78C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsharpApp", "example\CsharpApp\CsharpApp.csproj", "{F54A7F63-0925-4F61-803B-5ACC4B0FCA52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CsharpApp", "example\CsharpApp\CsharpApp.csproj", "{F54A7F63-0925-4F61-803B-5ACC4B0FCA52}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "example", "example", "{5DF9918C-756A-47F7-BED1-89622305B8FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +26,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F54A7F63-0925-4F61-803B-5ACC4B0FCA52} = {5DF9918C-756A-47F7-BED1-89622305B8FF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {85411C4E-50B2-4AEC-8595-70FFDD022EA9}

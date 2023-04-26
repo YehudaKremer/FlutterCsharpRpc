@@ -1,6 +1,6 @@
-import 'package:csharp_rpc/csharp_rpc.dart';
+import 'dart:io';
 import 'package:flutter/material.dart';
-
+import 'package:csharp_rpc/csharp_rpc.dart';
 import 'types.dart';
 
 late CsharpRpc csharpRpc;
@@ -8,9 +8,13 @@ late CsharpRpc csharpRpc;
 Future<void> main() async {
   runApp(const MyApp());
 
-  csharpRpc =
-      await CsharpRpc("../CsharpApp/bin/Debug/net7.0-windows/CsharpApp.exe")
-          .start();
+  var pathToCsharpExecutableFile =
+      "../CsharpApp/bin/Debug/net7.0-windows/CsharpApp.exe";
+
+  /// Create and start CsharpRpc instance.
+  /// you can create this instance anywhere in your program, but remember to
+  /// dispose is by calling 'csharpRpc.dispose()'
+  csharpRpc = await CsharpRpc(pathToCsharpExecutableFile).start();
 }
 
 class MyApp extends StatelessWidget {
@@ -19,73 +23,89 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class MyHomePage extends StatelessWidget {
+  final _textFieldController = TextEditingController();
 
-  final String title;
+  MyHomePage({super.key});
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  Future<void> _incrementCounter() async {
-    // var dateTimeResult = await csharpRpc.invoke(method: "GetCurrentDateTime");
-
-    // var sumNumbersResult =
-    //     await csharpRpc.invoke<int>(method: "SumNumbers", params: [2, 3]);
-
-    var filesResult = FilesInFolderResponse.fromJson(await csharpRpc.invoke(
-        method: "getFilesInFolder",
-        param: GetFilesInFolderRequest(
-            folderPath: '../CsharpApp/bin/Debug/net7.0-windows/')));
-    print('filesResult:');
-    print(filesResult.files);
-
-    // await csharpRpc.invoke(
-    //     method: "ShowMessageBox",
-    //     params: ['Hello World!', 'Hello from flutter c# child process.']);
-
-    setState(() {
-      _counter++;
-    });
+  void _updateTextField(String text) {
+    _textFieldController.value = TextEditingValue(text: text);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: const Text('Flutter Csharp RPC Demo'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  child: const Text('GET CURRENT DATE TIME'),
+                  onPressed: () async {
+                    /// invoke C# method 'GetCurrentDateTime'
+                    /// to get the current date time
+                    var currentDateTime =
+                        await csharpRpc.invoke(method: "GetCurrentDateTime");
+
+                    _updateTextField(currentDateTime);
+                  },
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: ElevatedButton(
+                    child: const Text('SUM NUMBERS 2 + 3'),
+                    onPressed: () async {
+                      /// invoke C# method 'SumNumbers' with the params '[2, 3]'
+                      /// to get the summary of 2 + 5
+                      var sumNumbersResult = await csharpRpc
+                          .invoke<int>(method: "SumNumbers", params: [2, 3]);
+
+                      _updateTextField(sumNumbersResult.toString());
+                    },
+                  ),
+                ),
+                ElevatedButton(
+                  child: const Text('GET FILES IN CURRENT FOLDER'),
+                  onPressed: () async {
+                    /// invoke C# method 'GetFilesInFolder' with param of
+                    /// 'GetFilesInFolderRequest' instance to get a list of
+                    /// files in the current folder
+                    var filesResult =
+                        FilesInFolderResponse.fromJson(await csharpRpc.invoke(
+                      method: "GetFilesInFolder",
+                      param: GetFilesInFolderRequest(
+                          folderPath: Directory.current.path),
+                    ));
+
+                    _updateTextField(filesResult.files.toString());
+                  },
+                ),
+              ],
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            SizedBox(
+              width: 618,
+              child: TextField(
+                controller: _textFieldController,
+                maxLines: 5,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'C# Response',
+                ),
+              ),
+            )
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }

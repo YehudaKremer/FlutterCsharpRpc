@@ -32,9 +32,7 @@ namespace FlutterCsharpRpc
                 server,
                 new JsonRpcTargetOptions
                 {
-                    DisposeOnDisconnect = true,
-                    EventNameTransform = CommonMethodNameTransforms.CamelCase,
-                    MethodNameTransform = CommonMethodNameTransforms.CamelCase,
+                    DisposeOnDisconnect = true
                 });
 
             jsonRpc.StartListening();
