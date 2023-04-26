@@ -2,8 +2,8 @@ name: csharp_rpc
 description: Execute C# code from Dart (Flutter) application.
 version: 0.0.1
 maintainer: Yehuda Kremer (yehudakremer@gmail.com)
-homepage: https://github.com/YehudaKremer/csharp_rpc
-issue_tracker: https://github.com/YehudaKremer/csharp_rpc/issues
+homepage: https://github.com/YehudaKremer/FlutterCsharpRpc
+issue_tracker: https://github.com/YehudaKremer/FlutterCsharpRpc/issues
 
 environment:
   sdk: ">=2.12.0 <4.0.0"
