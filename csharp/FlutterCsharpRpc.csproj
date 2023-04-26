@@ -3,10 +3,34 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<Version>0.0.1</Version>
+		<Title>Execute C# code from Dart (Flutter) application.</Title>
+		<Authors>yehudak</Authors>
+		<Description>With this package we can execute C# code from Dart (Flutter) application via JSON-RPC protocol.</Description>
+		<PackageProjectUrl>https://github.com/YehudaKremer/FlutterCsharpRpc</PackageProjectUrl>
+		<PackageIcon>csharp_rpc_nuget_logo.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/YehudaKremer/FlutterCsharpRpc</RepositoryUrl>
+		<PackageTags>Flutter; Dart; RPC; json-rpc; ffi; Csharp</PackageTags>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 	</PropertyGroup>
 
 	<ItemGroup>
 	  <None Remove=".gitignore" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="..\docs\assets\csharp_rpc_nuget_logo.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	  <None Include="..\LICENSE">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	  <None Include="..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 
 	<ItemGroup>
