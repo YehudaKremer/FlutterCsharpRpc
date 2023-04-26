@@ -1,8 +1,10 @@
 ![Flutter_Csharp_RPC_Logo](https://raw.githubusercontent.com/YehudaKremer/FlutterCsharpRpc/main/docs/assets/csharp_rpc_logo.png)
 
-# Flutter Csharp RPC
+# Flutter Csharp RPC [WIP]
 
 Execute C# code from Dart (Flutter) application by running C# child process and communicate with it via standard in/out (stdin/stdout) and JSON-RPC protocol.
+
+TODO: add documentation...
 
 <!-- TODO: add description here (FFI, IO streams, json-rpc)
 
