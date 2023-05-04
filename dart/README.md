@@ -73,7 +73,7 @@ In your C# project, add the `FlutterCsharpRpc` Nuget package as a new dependency
 the following command:
 
 ```console
-PS c:\src\flutter_project> dotnet add package FlutterCsharpRpc
+PS c:\src\csharp_project> dotnet add package FlutterCsharpRpc
 ```
 
 In your program code, start the JSON-RPC server by calling the `StartAsync` method:
@@ -100,7 +100,23 @@ public class Server
 
 ## ⚡ Demo
 
-See the full [demo](https://github.com/YehudaKremer/FlutterCsharpRpc/tree/main/example) of Flutter and C# app that communicate between them.
+See the full [demo](https://github.com/YehudaKremer/FlutterCsharpRpc/tree/main/example/basic) of Flutter and C# app that communicate between them.
+
+## 🤖 Code Generation
+
+`Note: this feature is optional and not needed for small applications`
+
+When using JSON-RPC we need our Dart classes to be serialize to JSON.
+
+Also, it will be helpful if our csharp program have the same classes as our Flutter program so we can easily communicate between them.
+
+To solve those problems and to speed up and enhance our development experience, we can use code generation to do the work for us.
+
+Take a look on a [example](https://github.com/YehudaKremer/FlutterCsharpRpc/tree/main/example/code_generation) Flutter app that use code generation solution.
+
+## 🙏 Credit
+
+This package based on Michael K Snead's article on medium: [Flutter, C# and JSON RPC](https://medium.com/@aikeru/flutter-c-and-json-rpc-f325be6764bd)
 
 ---
 

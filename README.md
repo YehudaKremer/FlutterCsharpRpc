@@ -104,7 +104,7 @@ See the full [demo](https://github.com/YehudaKremer/FlutterCsharpRpc/tree/main/e
 
 ## 🤖 Code Generation
 
-`NOTE: this feature is optional and not needed for small applications`
+`Note: this feature is optional and not needed for small applications`
 
 When using JSON-RPC we need our Dart classes to be serialize to JSON.
 

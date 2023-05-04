@@ -12,4 +12,4 @@ After running this command, you will see that new files are added to the project
 
 This example uses the [json_serializable](https://pub.dev/packages/json_serializable) package for JSON serialization, and [csharp_generator](https://pub.dev/packages/csharp_generator) package for C# types generation.
 
-Note: You can set the output path of the C# file-types by create and edit the [build.yaml](https://github.com/YehudaKremer/FlutterCsharpRpc/tree/main/example/code_generation/flutter_app/build.yaml) file.
+**Note**: You can set the output path of the C# file-types by create and edit the [build.yaml](https://github.com/YehudaKremer/FlutterCsharpRpc/tree/main/example/code_generation/flutter_app/build.yaml) file.
