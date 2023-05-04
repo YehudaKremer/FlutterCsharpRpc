@@ -112,7 +112,7 @@ Also, it will be helpful if our csharp program have the same classes as our Flut
 
 To solve those problems and to speed up and enhance our development experience, we can use code generation to do the work for us.
 
-Take a look on a [example](https://github.com/YehudaKremer/FlutterCsharpRpc/tree/main/example/csharp_generator) Flutter app that use code generation solution.
+Take a look on a [example](https://github.com/YehudaKremer/FlutterCsharpRpc/tree/main/example/code_generation) Flutter app that use code generation solution.
 
 ## 🙏 Credit
 
