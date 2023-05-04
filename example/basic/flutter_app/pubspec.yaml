@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   csharp_rpc:
-    path: ../../dart
+    path: ../../../dart
 
 dev_dependencies:
   flutter_test:

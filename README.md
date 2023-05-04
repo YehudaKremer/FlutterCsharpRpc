@@ -100,7 +100,7 @@ public class Server
 
 ## ⚡ Demo
 
-See the full [demo](https://github.com/YehudaKremer/FlutterCsharpRpc/tree/main/example) of Flutter and C# app that communicate between them.
+See the full [demo](https://github.com/YehudaKremer/FlutterCsharpRpc/tree/main/example/basic) of Flutter and C# app that communicate between them.
 
 ## 🙏 Credit
 

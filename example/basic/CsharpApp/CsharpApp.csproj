@@ -12,7 +12,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\csharp\FlutterCsharpRpc.csproj" />
+		<ProjectReference Include="..\..\..\csharp\FlutterCsharpRpc.csproj" />
 	</ItemGroup>
 
 </Project>
