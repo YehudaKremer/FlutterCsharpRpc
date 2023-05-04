@@ -1,0 +1,7 @@
+targets:
+  $default:
+    builders:
+      csharp_generator:csharpBuilder:
+        options:
+          outPath: CsharpModels/Models.cs
+          namespace: MyCsharpProject
