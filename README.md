@@ -73,7 +73,7 @@ In your C# project, add the `FlutterCsharpRpc` Nuget package as a new dependency
 the following command:
 
 ```console
-PS c:\src\flutter_project> dotnet add package FlutterCsharpRpc
+PS c:\src\csharp_project> dotnet add package FlutterCsharpRpc
 ```
 
 In your program code, start the JSON-RPC server by calling the `StartAsync` method:
