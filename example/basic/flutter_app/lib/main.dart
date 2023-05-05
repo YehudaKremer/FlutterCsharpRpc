@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:csharp_rpc/csharp_rpc.dart';
 import 'types.dart';
@@ -8,8 +9,13 @@ late CsharpRpc csharpRpc;
 Future<void> main() async {
   runApp(const MyApp());
 
-  var pathToCsharpExecutableFile =
-      "../CsharpApp/bin/Debug/net7.0-windows/CsharpApp.exe";
+  /// The path to our C# program.
+  /// In release-mode we will publish the C# app to the flutter build path:
+  /// "..\flutter_app\build\windows\runner\Release\csharp"
+  /// so, we can use the path: "csharp/CsharpApp.exe"
+  var pathToCsharpExecutableFile = kReleaseMode
+      ? 'csharp/CsharpApp.exe'
+      : "../CsharpApp/bin/Debug/net7.0-windows/CsharpApp.exe";
 
   /// Create and start CsharpRpc instance.
   /// you can create this instance anywhere in your program, but remember to

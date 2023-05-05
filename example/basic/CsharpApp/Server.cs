@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-/// <summary>
+﻿/// <summary>
 /// Class that contains the JSON-RPC methods
 /// </summary>
 public class Server
@@ -26,7 +24,7 @@ public class Server
 
         return new FilesInFolderResponse
         {
-            Files = Directory.GetFiles(request.FolderPath!)
+            Files = Directory.GetFiles(request.FolderPath!).Take(10).ToArray()
         };
     }
 }
