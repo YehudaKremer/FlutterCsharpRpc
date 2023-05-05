@@ -1,6 +1,6 @@
 name: csharp_rpc
 description: Execute C# code from Dart (Flutter) application via JSON-RPC protocol.
-version: 0.0.5
+version: 0.0.6
 maintainer: Yehuda Kremer (yehudakremer@gmail.com)
 homepage: https://github.com/YehudaKremer/FlutterCsharpRpc
 issue_tracker: https://github.com/YehudaKremer/FlutterCsharpRpc/issues

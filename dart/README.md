@@ -114,6 +114,16 @@ To solve those problems and to speed up and enhance our development experience, 
 
 Take a look on a [example](https://github.com/YehudaKremer/FlutterCsharpRpc/tree/main/example/code_generation) Flutter app that use code generation solution.
 
+## 📦 Publish (Release Mode)
+
+While in development (Debug Mode) our C# program can located anywhere ([see in basic example](https://github.com/YehudaKremer/FlutterCsharpRpc/blob/5c57deb2026b15d58bfc9a6d34fcda6a43556ac5/example/basic/flutter_app/lib/main.dart#L17)),
+but when we build our Flutter app in Release mode, its time to move and publish the C# program into the Flutter build folder ([see in basic example](https://github.com/YehudaKremer/FlutterCsharpRpc/blob/5c57deb2026b15d58bfc9a6d34fcda6a43556ac5/example/basic/flutter_app/lib/main.dart#LL18C13-L18C13)).
+
+- you can publish the C# into the Flutter Release-build folder: [example](https://github.com/YehudaKremer/FlutterCsharpRpc/blob/5c57deb2026b15d58bfc9a6d34fcda6a43556ac5/example/basic/CsharpApp/Properties/PublishProfiles/FolderProfile.pubxml#LL5C19-L5C19)
+- when publishing the C# program, set it as [SelfContained](https://github.com/YehudaKremer/FlutterCsharpRpc/blob/5c57deb2026b15d58bfc9a6d34fcda6a43556ac5/example/basic/CsharpApp/Properties/PublishProfiles/FolderProfile.pubxml#LL9C1-L9C1), so it will work on every device even if Dotnet is not installed
+
+Note: Those publish instructions are also suitable publish/deploy with [MSIX](https://pub.dev/packages/msix).
+
 ## 🙏 Credit
 
 This package based on Michael K Snead's article on medium: [Flutter, C# and JSON RPC](https://medium.com/@aikeru/flutter-c-and-json-rpc-f325be6764bd)
