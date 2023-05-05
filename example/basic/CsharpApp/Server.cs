@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using System.Windows;
 
 /// <summary>
 /// Class that contains the JSON-RPC methods
@@ -19,17 +18,6 @@ public class Server
         Console.Error.WriteLine($"Received 'SumNumbers' request");
 
         return a + b;
-    }
-
-    /// <summary>
-    /// Windows UI example for fun :)
-    /// Of course we will use Flutter for the UI.
-    /// </summary>
-    public void ShowMessageBox(string title, string message)
-    {
-        Console.Error.WriteLine($"Received 'ShowMessageBox' request");
-
-        MessageBox.Show(message, title, MessageBoxButton.OK, MessageBoxImage.Asterisk, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
     }
 
     public FilesInFolderResponse GetFilesInFolder(GetFilesInFolderRequest request)
