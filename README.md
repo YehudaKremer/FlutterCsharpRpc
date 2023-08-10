@@ -10,6 +10,9 @@ In run-time, we will create a C# child process and communicate with it via JSON-
 
 The JSON-RPC protocol let us invoke C# methods on the child process.
 
+> [!IMPORTANT]\
+> For now, this package will work only with .Net (Core) projects, and not with .Net Framework
+
 For example, we have the C# method:
 
 ```csharp
